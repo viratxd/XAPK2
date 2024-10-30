@@ -5,7 +5,7 @@ from utils.apk_process import process_xapk, process_sign, xapk_debug
 from utils.file_handling import handle_file_upload, handle_url_download
 from utils.cleanup import cleanup_files
 
-st.title("APK File Processor")
+st.title("ANDROID APP DEBUGGING")
 
 uploaded_file = st.file_uploader("Upload APK file", type=['apk', 'xapk', 'apks'])
 url_input = st.text_input("Or enter APK URL")
