@@ -14,7 +14,7 @@ def process_apk(uploaded_file, processing_option):
     if uploaded_file is None:
         return "No file provided.", None
 
-    # Handle the uploaded file
+    # Handle the uploaded file and retrieve its path
     input_path = handle_file_upload(uploaded_file, upload_dir)
     output_dir = upload_dir
     output_path = None
@@ -43,7 +43,7 @@ def process_apk(uploaded_file, processing_option):
 with gr.Blocks() as demo:
     gr.Markdown("# ANDROID APP DEBUGGING\nSupported file types: .apk, .xapk, .apks")
     
-    uploaded_file = gr.File(label="Upload APK file", file_types=["apk", "xapk", "apks"])
+    uploaded_file = gr.File(label="Upload APK file", file_types=[".apk", ".xapk", ".apks"])
     
     processing_option = gr.Radio(
         choices=['Process XAPK', 'Sign APK', 'Debug APK', 'XAPK Debug'],
